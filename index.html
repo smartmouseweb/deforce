@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeForce Fitness Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <page class="rounded p-md-5 p-4 m-auto mt-md-5 mt-0 d-block col-sm-6">
+    <h1 class="p-0 m-0">DeForce Fitness Form</h1>
+    <div class="progress-bar"><span></span></div>
+    <form action="success.html" method="post" class="registration-form needs-validation" novalidate>
+
+      <section data-step="1">
+        <div class="row">
+          <div class="col-sm-3 align-bottom"><i class="icon fas fa-caret-right"></i> E-mail:</div>
+          <div class="col-sm-9"><input type="email" class="form-control" name="email" required></div>
+          <div class="invalid-feedback">Adresa de e-mail lipsește</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"><i class="icon fas fa-caret-right"></i> Vârstă:</div>
+          <div class="col-sm-9"><input type="number" class="form-control" name="age" required></div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"><i class="icon fas fa-caret-right"></i> Sex:</div>
+          <div class="col-sm-9">
+            <input type="radio" class="form-check-input" name="gender" value="m" id="genderMale" checked>
+            <label class="form-check-label px-2 d-inline pe-5" for="genderMale">Masculin</label><br class="d-block d-sm-none">
+            <input type="radio" class="form-check-input" name="gender" value="f" id="genderFemale">
+            <label class="form-check-label px-2 d-inline pe-5" for="genderFemale">Feminin</label><br class="d-block d-sm-none">
+            <input type="radio" class="form-check-input" name="gender" value="f" id="genderOther">
+            <label class="form-check-label px-2 d-inline" for="genderOther">Nespecificat</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"><i class="icon fas fa-caret-right"></i> Înălțime (cm):</div>
+          <div class="col-sm-9"><input type="number" class="form-control" name="height" required></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"><i class="icon fas fa-caret-right"></i> Greutate (kg):</div>
+          <div class="col-sm-9"><input type="number" class="form-control" name="weight" required></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"><i class="icon fas fa-caret-right"></i> Tip somatic:</div>
+          <div class="col-sm-9">
+            <select class="form-select" name="somaticType" required>
+              <option value="" selected>...</option>
+              <option value="1">Ectomorf</option>
+              <option value="2">Mezomorf</option>
+              <option value="3">Endomorf</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section data-step="2" class="hidden">
+          <i class="icon fas fa-caret-right"></i> Ai vreo experiență anterioară cu antrenamentele sau cu frecventarea unei săli de fitnes?<br>
+          <textarea class="form-control my-4" name="question_1"></textarea>
+      </section>
+
+      <section data-step="3" class="hidden">
+          <i class="icon fas fa-caret-right"></i> Există vreo afecțiune sau problemă de sănătate pe care ar trebui să o aduci la cunoștința noastră?<br>
+          <textarea class="form-control my-4" name="question_2"></textarea>
+      </section>
+
+      <section data-step="4" class="hidden">
+          <i class="icon fas fa-caret-right"></i> Care sunt obiectivele tale prin participarea la antrenamente în sala de fitness?
+          <div class="py-2">
+            <input type="checkbox" class="form-check-input" name="question_3[]" value="m" id="q3a1">
+            <label class="form-check-label px-2 d-inline" for="q3a1">pierdere în greutate</label><br>
+            <input type="checkbox" class="form-check-input" name="question_3[]" value="f" id="q3a2">
+            <label class="form-check-label px-2 d-inline" for="q3a2">creștere musculară</label><br>
+            <input type="checkbox" class="form-check-input" name="question_3[]" value="f" id="q3a3">
+            <label class="form-check-label px-2 d-inline" for="q3a3">tonifiere și definire musculară</label><br>
+            <input type="checkbox" class="form-check-input" name="question_3[]" value="f" id="q3a4">
+            <label class="form-check-label px-2 d-inline" for="q3a4">îmbunătățirea sănătății cardiovascular</label>
+          </div>
+      </section>
+
+      <section data-step="5" class="hidden">
+        <i class="icon fas fa-caret-right"></i> În cât timp îți dorești să observi rezultatele dorite?<br>
+        <select class="form-select mt-3" name="question_4">
+          <option value="" selected>...</option>
+          <option value="1">1 lună</option>
+          <option value="2">3 luni</option>
+          <option value="3">6 luni</option>
+          <option value="4">12 luni</option>
+        </select>
+        <br>
+        <i class="icon fas fa-caret-right"></i> Care sunt abilitățile pe care îți propui să le îmbunătățești sau să le dobândești?
+        <div class="py-2">
+          <input type="checkbox" class="form-check-input" name="question_5[]" value="m" id="q5a1">
+          <label class="form-check-label px-2 d-inline" for="q5a1">rezistența fizică</label><br>
+          <input type="checkbox" class="form-check-input" name="question_5[]" value="f" id="q5a2">
+          <label class="form-check-label px-2 d-inline" for="q5a2">aptitudinea mentală</label><br>
+          <input type="checkbox" class="form-check-input" name="question_5[]" value="f" id="q5a3">
+          <label class="form-check-label px-2 d-inline" for="q5a3">echilibru</label><br>
+        </div>
+      </section>
+
+      <button type="submit" class="btn btn-primary btn-lg continue">Continuă</button>
+    </form>
+  </page>
+</body>
+</html>
